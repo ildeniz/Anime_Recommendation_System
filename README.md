@@ -1,6 +1,6 @@
 # Anime Recommendation System: Project Overview 
-* Created a scraper by using Jikan (時間) REST API.to extract anime data between by using Jikan (時間) REST API.
-* Scraped 2333 anime TV productions between 2010-2022 from myanimelist using python and scraper.
+* Created a scraper by using Jikan (時間) REST API.
+* Scraped 2333 anime TV productions between 2010-2022 from myanimelist using python and the created scraper.
 
 TODO:
 * User data scraper.
