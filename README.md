@@ -1,9 +1,12 @@
 # Anime Recommendation System: Project Overview 
-* Created a scraper by using Jikan (時間) REST API.
+* Created scrapers by using Jikan (時間) REST API to scrap anime and user information from myanimelist[DOT]net.
 * Scraped 2333 anime TV productions between 2010-2022 from myanimelist using python and the created scraper.
+* Scraped 86269 individual users' data.
 
 TODO:
-* User data scraper.
+* data cleaning
+* EDA
+* model build
 
 ## Code and Resources Used 
 **Python Version:** 3.9  
@@ -12,11 +15,11 @@ TODO:
 **Scraper Github:** https://github.com/ildeniz/Anime_Recommendation_System/blob/master/mal_scraper.py 
 
 ## Web Scraping
-The scraper used to scrape 2333 anime TV productions between 2010-2022 from myanimelist[DOT]net.  
-TODO:
-User data to be scraped.
+The scrapers used to scrape 2333 anime TV productions between 2010-2022 from myanimelist[DOT]net, and 86269 individual users' scores & watch status info.
 
-With each anime, we got the following:
+I had to get creative to collect user data since Jikan API no longer supports scraping anime list of individual users. Instead of scraping data directly from user data, I utilised each anime's "user updates" section. This section goes up to a maximum of 100 pages, and each page is consistent with 75 individual users. Due to time constraints issues, I preferred to scrap data from the first 5 pages. During scraping, I realised that sometimes users appear on multiple pages; I dealt with this problem in the source and implemented a section to remove duplicates while scraping.
+
+For each anime, we got the following information:
 *	Anime title
 *	Anime MAL ID
 *	Rating *(Animes w/o a user rating are excluded.)*
@@ -27,8 +30,11 @@ With each anime, we got the following:
 *	Premiered year
 *	Premiered season  
 
-TODO:
-* User data (user_id, anime_id, users_rating, etc.)
+For each user, we got the following information:
+* User name
+* Score assigned by the user to a given anime
+* User's watch status of the anime
+* The id number of the anime
 
 ## Data Cleaning
 
