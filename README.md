@@ -4,7 +4,6 @@
 * Scraped 86269 individual users' data.
 
 TODO:
-* data cleaning
 * EDA
 * model build
 
@@ -36,8 +35,18 @@ For each user, we got the following information:
 * User's watch status of the anime
 * The id number of the anime
 
-## Data Cleaning
+## Data Cleaning & Feature Engineering
+Result contamination avoidance:
+* Suspicious users (fake, bot, troll) accounts are excluded from the data set.
+* Observations with watching status as `'Plan to Watch'` are excluded from the data set.
+* Observations with watching status as `'Dropped'` with user scores more than 6 are excluded from the data set.
 
+Missing values:
+* Animes without determined genres are classified as `'NonClassified'`.
+* User infos with missing values in watching status are accounted as *corrupted data* and excluded from the data set.
+
+Feature engineering:
+* Created dummies of the comma seperated values in `'Genre'` column.
 ## EDA
 
 ## Model Building 
