@@ -37,7 +37,7 @@ For each user, we got the following information:
 
 ## Data Cleaning & Feature Engineering
 Result contamination avoidance:
-* Suspicious users (fake, bot, troll) accounts are excluded from the data set.
+* Suspicious (fake, bot, troll) user accounts are excluded from the data set.
 * Observations with watching status as `'Plan to Watch'` are excluded from the data set.
 * Observations with watching status as `'Dropped'` with user scores more than 6 are excluded from the data set.
 
